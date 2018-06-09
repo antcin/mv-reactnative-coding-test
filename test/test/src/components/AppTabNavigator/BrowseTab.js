@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Icon } from 'native-base';
+import { Container, Content, Icon } from 'native-base';
+import Card from '../Card'
+import PerksList from '../PerksList'
 
 class BrowseTab extends Component {
 
@@ -12,9 +14,11 @@ class BrowseTab extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text>BrowseTab</Text>
-      </View>
+      <Container style={styles.container}>
+        <Content>
+          <PerksList />
+        </Content>
+      </Container>
     );
   }
 }
@@ -24,8 +28,6 @@ export default BrowseTab;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#454545',
   },
 });
