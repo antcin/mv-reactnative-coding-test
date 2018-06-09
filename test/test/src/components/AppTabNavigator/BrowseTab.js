@@ -9,7 +9,12 @@ class BrowseTab extends Component {
   static navigationOptions = {
     tabBarIcon: ({tintColor}) => (
       <Icon name="ios-home" style={{color: tintColor}}/>
-    )
+    ),
+    title: 'HOME',
+      headerTintColor: '#FFFFFF',
+      headerStyle: {
+        backgroundColor: '#010101',
+      },
   }
 
   render() {
