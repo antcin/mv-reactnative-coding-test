@@ -5,7 +5,7 @@ import CardSection from './CardSection';
 import PerkButton from './PerkButton';
 import normalize from 'react-native-elements/src/helpers/normalizeText'
 
-const PerkDetails = ({ perk }) => {
+const CardDetails = ({ perk }) => {
   const { title, image, subtitle, type } = perk
 
   return (
@@ -53,4 +53,4 @@ const styles = {
   }
 }
 
-export default PerkDetails;
+export default CardDetails;

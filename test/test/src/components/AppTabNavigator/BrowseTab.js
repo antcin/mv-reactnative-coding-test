@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Container, Content, Icon } from 'native-base';
+import { Container, Content, Icon, Tab } from 'native-base';
 import Card from '../Card'
 import PerksList from '../PerksList'
 
@@ -10,11 +10,8 @@ class BrowseTab extends Component {
     tabBarIcon: ({tintColor}) => (
       <Icon name="ios-home" style={{color: tintColor}}/>
     ),
-    title: 'HOME',
-      headerTintColor: '#FFFFFF',
-      headerStyle: {
-        backgroundColor: '#010101',
-      },
+    title: "Instagram",
+
   }
 
   render() {

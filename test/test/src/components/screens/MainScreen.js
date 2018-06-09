@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Platform } from 'react-native';
 import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
-import { Icon } from 'native-base';
+import { Icon, Content } from 'native-base';
 import BrowseTab from '../AppTabNavigator/BrowseTab';
 import PostsTab from '../AppTabNavigator/PostsTab';
 import FavouritesTab from '../AppTabNavigator/FavouritesTab';
@@ -10,7 +10,12 @@ import ProfileTab from '../AppTabNavigator/ProfileTab';
 
 class MainScreen extends Component {
   static navigationOptions = {
-    headerRight: <Icon name="menu" style={{ paddingRight: 10}} />
+    headerRight: <Icon name="menu" style={{ paddingRight: 10, color: '#ffffff'}} />,
+    title: 'HOME',
+      headerTintColor: '#FFFFFF',
+      headerStyle: {
+        backgroundColor: '#010101',
+    },
   }
   render() {
     return (

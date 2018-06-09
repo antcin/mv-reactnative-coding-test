@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView, View, Text } from 'react-native';
-import PerkDetails from './PerkDetails';
+import CardDetails from './CardDetails';
 import listResponse from '../../example_data/list_response';
 
 
@@ -9,10 +9,14 @@ class PerksList extends Component {
   // constructor(props){
   //   super(props)
   // }
+  handleTilePress = (perks) => {
+    this.props.navigation.navigate('PerkDetails', { ...perks })
+  }
+
   renderPerks() {
   return this.state.perks.map(perk => (
     <View style={styles.container} key={perk.title}>
-      <PerkDetails perk={perk} />
+      <CardDetails perk={perk} />
     </View>
   ))
 }
