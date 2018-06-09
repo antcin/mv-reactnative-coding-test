@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Platform } from 'react-native';
 import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
 import { Icon } from 'native-base';
 import BrowseTab from '../AppTabNavigator/BrowseTab';
@@ -22,22 +22,31 @@ class MainScreen extends Component {
 export default MainScreen;
 
 const AppTabNavigator = createBottomTabNavigator({
-  BrowseTab: {
+  Browse: {
     screen: BrowseTab
   },
-  PostsTab: {
+  Posts: {
     screen: PostsTab
   },
-  FavouritesTab: {
+  Favourites: {
     screen: FavouritesTab
   },
-  RedeemedTab: {
+  Redeemed: {
     screen: RedeemedTab
   },
-  ProfileTab: {
+  Profile: {
     screen: ProfileTab
   },
-})
+},{
+  animationEnabled: true,
+  swipeEnabled: true,
+  tabBarPosition: "bottom",
+  tabBarOptions: {
+    activeTintColor: '#000',
+    inactiveTintColor: '#d1cece',
+  }
+}
+)
 
 const styles = StyleSheet.create({
   container: {
