@@ -2,10 +2,10 @@ import React from 'react'
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
 import MainScreen from '../components/screens/MainScreen'
 import PerkScreen from '../components/screens/PerkScreen'
-import PostsTab from '../components/Tabs/PostsTab';
-import FavouritesTab from '../components/Tabs/FavouritesTab';
-import RedeemedTab from '../components/Tabs/RedeemedTab';
-import ProfileTab from '../components/Tabs/ProfileTab';
+import PostsTab from '../components/tabs/PostsTab';
+import FavouritesTab from '../components/tabs/FavouritesTab';
+import RedeemedTab from '../components/tabs/RedeemedTab';
+import ProfileTab from '../components/tabs/ProfileTab';
 import CardsList from '../components/CardsList';
 import { Content, Icon } from 'native-base';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
