@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Container, Content, Icon, Tab } from 'native-base';
 import Card from '../Card'
 import CardsList from '../CardsList'
+import PerkButton from '../PerkButton'
 
 class BrowseTab extends Component {
 
@@ -15,8 +16,7 @@ class BrowseTab extends Component {
   }
 
   render() {
-    console.log(this.props.navigation)
-
+    console.log(this.props.navigation.state);
     return (
       <Container style={styles.container}>
         <Content>

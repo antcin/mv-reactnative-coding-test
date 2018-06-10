@@ -6,7 +6,9 @@ import normalize from 'react-native-elements/src/helpers/normalizeText'
 import detailResponse from '../../../example_data/details_response'
 
 class PerkScreen extends Component {
+
   static navigationOptions = { header: null};
+
   constructor(props) {
     super(props)
     this.state = {
@@ -21,7 +23,8 @@ class PerkScreen extends Component {
   }
 
   render() {
-    listing = this.props.navigation.state.params;
+
+    const { title, subtitle } = this.props.navigation.state.params;
 
     return (
       <ScrollView style={styles.screen}>

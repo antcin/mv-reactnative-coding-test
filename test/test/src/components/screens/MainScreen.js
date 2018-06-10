@@ -17,8 +17,11 @@ class MainScreen extends Component {
         backgroundColor: '#010101',
     },
   }
+
+
   render() {
-    console.log(this.props.navigation)
+    // const { navigate } = this.props.navigation
+    console.log(this.props.navigation.state);
     return (
       <AppTabNavigator />
     );

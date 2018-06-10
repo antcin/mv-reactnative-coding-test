@@ -15,8 +15,8 @@ export default class App extends React.Component {
 
 
 const AppStackNavigator = createStackNavigator({
-  CardsList:{
-    screen: CardsList
+  MainScreen:{
+    screen: MainScreen
   },
   PerkScreen:{
     screen: PerkScreen

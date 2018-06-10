@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Text, Touch } from 'react-native';
+import { ScrollView, View, Text, TouchableOpacity } from 'react-native';
 import CardSection from './CardSection';
 import CardDetails from './CardDetails';
 import PerkButton from './PerkButton';
@@ -28,13 +28,15 @@ class CardsList extends Component {
   }
 
   renderListings() {
+    console.log(this.props.navigation)
     return this.state.listings.map(listing => (
       <View style={styles.container} key={listing.title}>
         <CardDetails listing={listing} />
         <CardSection>
-          <PerkButton onPress={() => this.handlePerkPress(listing)}>
+          <PerkButton onPress={() => console.log(this.props.navigation.state)}>
             PERK
           </PerkButton>
+          <TouchableOpacity></TouchableOpacity>
         </CardSection>
       </View>
     ))
