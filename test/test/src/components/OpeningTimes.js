@@ -52,8 +52,8 @@ const styles = {
     borderLeftWidth: 1,
     borderTopColor: '#5F4B8B',
     borderTopWidth: 4,
-    width: 60,
-    height: 60,
+    width: 100,
+    height: 100,
   },
   dayText: {
     color: '#ccc',

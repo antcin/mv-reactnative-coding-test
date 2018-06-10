@@ -19,13 +19,13 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "animakit-expander": "^2.1.4",
     "expo": "^27.0.1",
     "native-base": "^2.5.1",
     "react": "16.3.1",
     "react-native": "~0.55.2",
-    "react-native-collapsible": "^0.12.0",
+    "react-native-communications": "^2.2.1",
     "react-native-elements": "^0.19.1",
+    "react-native-google-maps-directions": "^2.0.0",
     "react-native-vector-icons": "^4.6.0",
     "react-navigation": "^2.2.5"
   }
