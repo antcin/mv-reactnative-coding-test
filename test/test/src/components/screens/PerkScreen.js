@@ -9,8 +9,6 @@ import VenueInfo from '../VenueInfo'
 
 class PerkScreen extends Component {
 
-  // static navigationOptions = { header: null};
-
   constructor(props) {
     super(props)
     this.state = {
@@ -25,12 +23,7 @@ class PerkScreen extends Component {
   }
 
   render() {
-    console.log(this.props.navigation + 'perk screen')
-    const { navigation } = this.props
-    // const { params } = this.props.navigation.state
-
-    listing = this.props.navigation.state.params;
-
+    listing = this.props.navigation.state.params
     return (
       <ScrollView style={styles.screen}>
         <Image style={styles.image} source={{ uri: this.state.perk.image }} />

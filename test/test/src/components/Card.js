@@ -2,8 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {createStackNavigator} from 'react-navigation';
 
-// import { Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon}
-
 const Card = (props) => {
   return (
     <View style={styles.container}>

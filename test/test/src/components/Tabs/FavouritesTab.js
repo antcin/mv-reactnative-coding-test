@@ -4,12 +4,6 @@ import { Icon } from 'native-base';
 
 class FavouritesTab extends Component {
 
-  static navigationOptions = {
-    tabBarIcon: ({tintColor}) => (
-      <Icon name="heart" style={{color: tintColor}}/>
-    )
-  }
-
   render() {
     return (
       <View style={styles.container}>

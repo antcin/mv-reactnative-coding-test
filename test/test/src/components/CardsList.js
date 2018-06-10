@@ -14,21 +14,17 @@ class CardsList extends Component {
       errorMessage: "",
       isFetching: true
      }
-
-    this.renderListings = this.renderListings.bind(this);
   }
 
   componentDidMount() {
     this.setState({ listings: listResponse.data, isFetching: false })
   }
 
-
   handlePerkPress = (listing) => {
     this.props.navigation.navigate('PerkScreen', {...listing})
   }
 
-  renderListings() {
-    // const { params } = this.props.navigation.state
+  renderListings(){
     return this.state.listings.map(listing => (
       <View style={styles.container} key={listing.title}>
         <CardDetails listing={listing} />

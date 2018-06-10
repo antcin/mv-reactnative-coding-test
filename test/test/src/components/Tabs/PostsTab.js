@@ -4,11 +4,6 @@ import { Icon } from 'native-base';
 
 
 class PostsTab extends Component {
-  static navigationOptions = {
-    tabBarIcon: ({tintColor}) => (
-      <Icon name="camera" style={{color: tintColor}}/>
-    )
-  }
 
   render() {
     return (

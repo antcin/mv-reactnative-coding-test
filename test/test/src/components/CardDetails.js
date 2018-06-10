@@ -25,7 +25,7 @@ const CardDetails = ({ listing }) => {
       </View>
     </CardSection>
   </Card>
-)
+  )
 }
 
 const styles = {

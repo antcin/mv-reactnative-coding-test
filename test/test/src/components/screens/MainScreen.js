@@ -2,67 +2,24 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, Platform } from 'react-native';
 import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
 import { Icon, Content } from 'native-base';
-import BrowseTab from '../AppTabNavigator/BrowseTab';
-import PostsTab from '../AppTabNavigator/PostsTab';
-import FavouritesTab from '../AppTabNavigator/FavouritesTab';
-import RedeemedTab from '../AppTabNavigator/RedeemedTab';
-import ProfileTab from '../AppTabNavigator/ProfileTab';
+import CardsList from '../CardsList'
 
 class MainScreen extends Component {
   static navigationOptions = {
-    headerRight: <Icon name="menu" style={{ paddingRight: 10, color: '#ffffff'}} />,
-    title: 'HOME',
-      headerTintColor: '#FFFFFF',
-      headerStyle: {
-        backgroundColor: '#010101',
-    },
+    tabBarIcon: ({tintColor}) => (
+      <Icon name="heart" style={{color: tintColor}}/>
+    )
   }
 
 
+
   render() {
-    // const { navigate } = this.props.navigation
-    console.log(this.props);
+    console.log('MainScree ' + this.props);
     const { navigate } = this.props.navigation
     return (
-      <AppTabNavigator screenProps={this.props.screenProps}/>
+      <CardsList navigation={this.props.navigation}/>
     );
   }
 }
 
 export default MainScreen;
-
-const AppTabNavigator = createBottomTabNavigator({
-  Browse: {
-    screen: BrowseTab
-  },
-  Posts: {
-    screen: PostsTab
-  },
-  Favourites: {
-    screen: FavouritesTab
-  },
-  Redeemed: {
-    screen: RedeemedTab
-  },
-  Profile: {
-    screen: ProfileTab
-  },
-},{
-  animationEnabled: true,
-  swipeEnabled: true,
-  tabBarPosition: "bottom",
-  tabBarOptions: {
-    activeTintColor: '#000',
-    inactiveTintColor: '#d1cece',
-  }
-}
-)
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

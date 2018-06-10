@@ -2,38 +2,78 @@ import React from 'react'
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation'
 import MainScreen from '../components/screens/MainScreen'
 import PerkScreen from '../components/screens/PerkScreen'
-import BrowseTab from '../components/AppTabNavigator/BrowseTab';
-import PostsTab from '../components/AppTabNavigator/PostsTab';
-import FavouritesTab from '../components/AppTabNavigator/FavouritesTab';
-import RedeemedTab from '../components/AppTabNavigator/RedeemedTab';
-import ProfileTab from '../components/AppTabNavigator/ProfileTab';
-
+import PostsTab from '../components/Tabs/PostsTab';
+import FavouritesTab from '../components/Tabs/FavouritesTab';
+import RedeemedTab from '../components/Tabs/RedeemedTab';
+import ProfileTab from '../components/Tabs/ProfileTab';
+import CardsList from '../components/CardsList';
+import { Content, Icon } from 'native-base';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 export const AppStackNavigator = createStackNavigator({
-  MainScreen:{
-    screen: MainScreen
+  MainScreen: {
+    screen: MainScreen,
+    navigationOptions: ({ navigation }) => ({
+      headerRight: <Icon name="menu" style={{ paddingRight: 10, color: '#ffffff'}} />,
+      title: 'HOME',
+      headerTintColor: '#FFFFFF',
+      headerStyle: {
+        backgroundColor: '#010101'
+      },
+
+    })
   },
   PerkScreen:{
-    screen: PerkScreen
+    screen: PerkScreen,
+    mode: 'screen',
+    headerMode: 'none',
+    navigationOptions: ({ navigation }) => ({
+      title: 'PERK DETAIL',
+      headerBackTitle: null
+    })
   }
 })
 
 export const AppTabNavigator = createBottomTabNavigator({
-  Browse: {
-    screen: BrowseTab
+  BROWSE: {
+    screen: AppStackNavigator,
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({tintColor}) => (
+        <Icon name="home" style={{color: tintColor}}/>
+      )
+    })
   },
-  Posts: {
-    screen: PostsTab
+  POSTS: {
+    screen: PostsTab,
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({tintColor}) => (
+        <Icon name="camera" style={{color: tintColor}}/>
+      )
+    })
   },
-  Favourites: {
-    screen: FavouritesTab
+  FAVOURITES: {
+    screen: FavouritesTab,
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({tintColor}) => (
+        <Icon name="heart" style={{color: tintColor}}/>
+      )
+    })
   },
-  Redeemed: {
-    screen: RedeemedTab
+  REDEMEED: {
+    screen: RedeemedTab,
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({tintColor}) => (
+        <Icon  style={{color: tintColor}}/>
+      )
+    })
   },
-  Profile: {
-    screen: ProfileTab
+  PROFILE: {
+    screen: ProfileTab,
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({tintColor}) => (
+        <Icon name="person" style={{color: tintColor}}/>
+      )
+    })
   },
 },{
   animationEnabled: true,
@@ -45,12 +85,3 @@ export const AppTabNavigator = createBottomTabNavigator({
   }
 }
 )
-
-export const Root = createStackNavigator({
-  AppTabNavigator: {
-    screen: AppTabNavigator,
-  },
-}, {
-  mode: 'modal',
-  headerMode: 'none',
-});
