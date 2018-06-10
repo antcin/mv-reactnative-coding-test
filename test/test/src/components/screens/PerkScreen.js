@@ -9,7 +9,7 @@ import VenueInfo from '../VenueInfo'
 
 class PerkScreen extends Component {
 
-  static navigationOptions = { header: null};
+  // static navigationOptions = { header: null};
 
   constructor(props) {
     super(props)

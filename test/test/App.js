@@ -26,7 +26,7 @@ const AppStackNavigator = createStackNavigator({
     screen: PerkScreen,
     headerMode: 'none',
     navigationOptions: ({ navigation }) => ({
-      title: "BROWSE"
+      title: "PERK"
     })
   }
 })

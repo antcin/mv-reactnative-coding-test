@@ -29,7 +29,6 @@ class CardsList extends Component {
 
   renderListings() {
     // const { params } = this.props.navigation.state
-
     return this.state.listings.map(listing => (
       <View style={styles.container} key={listing.title}>
         <CardDetails listing={listing} />

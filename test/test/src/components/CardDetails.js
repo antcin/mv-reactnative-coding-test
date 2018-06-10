@@ -6,9 +6,11 @@ import PerkButton from './PerkButton';
 import normalize from 'react-native-elements/src/helpers/normalizeText'
 
 const CardDetails = ({ listing }) => {
-  const { title, image, subtitle, type } = listing
-
-
+  const { title, image, subtitle, type, offer } = listing
+  let walkingTime = "";
+  if (offer != null && offer.location != null) {
+    walkingTime = offer.location.walking_time;
+  }
 
   return (
   <Card>
@@ -19,6 +21,7 @@ const CardDetails = ({ listing }) => {
       <View style={styles.headerContent}>
         <Text style={styles.titleText}>{title}</Text>
         <Text style={styles.detailsText}>{subtitle}</Text>
+        <Text style={styles.detailsText}>{walkingTime}</Text>
       </View>
     </CardSection>
   </Card>
