@@ -4,6 +4,7 @@ import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
 import { Icon, Content } from 'native-base';
 import normalize from 'react-native-elements/src/helpers/normalizeText'
 import detailResponse from '../../../example_data/details_response'
+import OpeningTimes from '../OpeningTimes'
 
 class PerkScreen extends Component {
 
@@ -12,7 +13,7 @@ class PerkScreen extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      perk: {},
+      perk: '',
       errorMessage: "",
       isFetching: true
      }
@@ -23,8 +24,11 @@ class PerkScreen extends Component {
   }
 
   render() {
+    console.log(this.props.navigation + 'perk screen')
+    const { navigation } = this.props
+    // const { params } = this.props.navigation.state
 
-    const { title, subtitle } = this.props.navigation.state.params;
+    listing = this.props.navigation.state.params;
 
     return (
       <ScrollView style={styles.screen}>
@@ -36,6 +40,12 @@ class PerkScreen extends Component {
           <Text style={styles.detailsText}>{listing.subtitle}</Text>
         </View>
         <Text style={styles.titlesText}>OPENING TIMES</Text>
+        <OpeningTimes
+          open_hours={this.state.perk.open_hours}
+          renderItem={this.renderItem}
+          keyExtractor={this.keyExtractor}
+          horizontal
+        />
         <View>
           <Text style={styles.titlesText}>PERK DETAILS</Text>
           <Text style={styles.detailsText}>{this.state.perk.description}</Text>

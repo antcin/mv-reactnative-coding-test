@@ -11,12 +11,12 @@ class BrowseTab extends Component {
     tabBarIcon: ({tintColor}) => (
       <Icon name="ios-home" style={{color: tintColor}}/>
     ),
-    title: "HOME",
+    title: "BROWSE",
 
   }
 
   render() {
-    console.log(this.props.navigation.state);
+    console.log(this.children);
     return (
       <Container style={styles.container}>
         <Content>

@@ -4,11 +4,12 @@ import {createStackNavigator} from 'react-navigation';
 import MainScreen from './src/components/screens/MainScreen';
 import PerkScreen from './src/components/screens/PerkScreen';
 import CardsList from './src/components/CardsList';
+import BrowseTab from './src/components/AppTabNavigator/BrowseTab';
 
 export default class App extends React.Component {
   render() {
     return (
-      <AppStackNavigator />
+      <AppStackNavigator screenProps={this.props.navigation}/>
     );
   }
 }
@@ -16,18 +17,16 @@ export default class App extends React.Component {
 
 const AppStackNavigator = createStackNavigator({
   MainScreen:{
-    screen: MainScreen
+    screen: CardsList,
+    navigationOptions: ({ navigation }) => ({
+      title: 'HOME'
+    })
   },
   PerkScreen:{
-    screen: PerkScreen
+    screen: PerkScreen,
+    headerMode: 'none',
+    navigationOptions: ({ navigation }) => ({
+      title: "BROWSE"
+    })
   }
 })
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

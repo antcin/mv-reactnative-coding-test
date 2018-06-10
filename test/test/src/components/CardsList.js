@@ -28,12 +28,13 @@ class CardsList extends Component {
   }
 
   renderListings() {
-    console.log(this.props.navigation)
+    // const { params } = this.props.navigation.state
+
     return this.state.listings.map(listing => (
       <View style={styles.container} key={listing.title}>
         <CardDetails listing={listing} />
         <CardSection>
-          <PerkButton onPress={() => console.log(this.props.navigation.state)}>
+          <PerkButton onPress={() => this.handlePerkPress(listing)}>
             PERK
           </PerkButton>
           <TouchableOpacity></TouchableOpacity>
