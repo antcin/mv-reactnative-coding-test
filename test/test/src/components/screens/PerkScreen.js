@@ -5,6 +5,7 @@ import { Icon, Content } from 'native-base';
 import normalize from 'react-native-elements/src/helpers/normalizeText'
 import detailResponse from '../../../example_data/details_response'
 import OpeningTimes from '../OpeningTimes'
+import VenueInfo from '../VenueInfo'
 
 class PerkScreen extends Component {
 
@@ -39,6 +40,12 @@ class PerkScreen extends Component {
         <View>
           <Text style={styles.detailsText}>{listing.subtitle}</Text>
         </View>
+        <VenueInfo
+          website={this.state.perk.website}
+          latitude={this.state.perk.latitude}
+          longitude={this.state.perk.longitude}
+          phone={this.state.perk.phone}
+        />
         <Text style={styles.titlesText}>OPENING TIMES</Text>
         <OpeningTimes
           open_hours={this.state.perk.open_hours}
@@ -72,7 +79,7 @@ const styles = {
     marginLeft: 30,
   },
   image: {
-    height: 150,
+    height: 300,
     flex: 1,
     width: null,
   },
