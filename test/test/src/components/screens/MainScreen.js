@@ -5,17 +5,8 @@ import { Icon, Content } from 'native-base';
 import CardsList from '../CardsList'
 
 class MainScreen extends Component {
-  static navigationOptions = {
-    tabBarIcon: ({tintColor}) => (
-      <Icon name="heart" style={{color: tintColor}}/>
-    )
-  }
-
-
 
   render() {
-    console.log('MainScree ' + this.props);
-    const { navigate } = this.props.navigation
     return (
       <CardsList navigation={this.props.navigation}/>
     );
