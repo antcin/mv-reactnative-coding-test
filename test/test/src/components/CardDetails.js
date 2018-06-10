@@ -5,8 +5,10 @@ import CardSection from './CardSection';
 import PerkButton from './PerkButton';
 import normalize from 'react-native-elements/src/helpers/normalizeText'
 
-const CardDetails = ({ perk }) => {
-  const { title, image, subtitle, type } = perk
+const CardDetails = ({ listing }) => {
+  const { title, image, subtitle, type } = listing
+
+
 
   return (
   <Card>
@@ -19,10 +21,6 @@ const CardDetails = ({ perk }) => {
         <Text style={styles.detailsText}>{subtitle}</Text>
       </View>
     </CardSection>
-    <CardSection>
-      <PerkButton onPress={() => Alert.alert(title)} />
-    </CardSection>
-
   </Card>
 )
 }

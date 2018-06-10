@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {createStackNavigator} from 'react-navigation';
-import MainScreen from './src/components/screens/MainScreen'
+import MainScreen from './src/components/screens/MainScreen';
+import PerkScreen from './src/components/screens/PerkScreen';
+import CardsList from './src/components/CardsList';
 
 export default class App extends React.Component {
   render() {
@@ -11,9 +13,13 @@ export default class App extends React.Component {
   }
 }
 
+
 const AppStackNavigator = createStackNavigator({
-  Main:{
-    screen: MainScreen
+  CardsList:{
+    screen: CardsList
+  },
+  PerkScreen:{
+    screen: PerkScreen
   }
 })
 

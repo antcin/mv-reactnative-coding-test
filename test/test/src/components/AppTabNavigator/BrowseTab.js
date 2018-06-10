@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Container, Content, Icon, Tab } from 'native-base';
 import Card from '../Card'
-import PerksList from '../PerksList'
+import CardsList from '../CardsList'
 
 class BrowseTab extends Component {
 
@@ -10,15 +10,17 @@ class BrowseTab extends Component {
     tabBarIcon: ({tintColor}) => (
       <Icon name="ios-home" style={{color: tintColor}}/>
     ),
-    title: "Instagram",
+    title: "HOME",
 
   }
 
   render() {
+    console.log(this.props.navigation)
+
     return (
       <Container style={styles.container}>
         <Content>
-          <PerksList />
+          <CardsList />
         </Content>
       </Container>
     );

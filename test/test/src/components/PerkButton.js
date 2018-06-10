@@ -3,12 +3,12 @@ import { Text, TouchableOpacity } from 'react-native';
 import normalize from 'react-native-elements/src/helpers/normalizeText'
 
 
-const PerkButton = ({ onPress }) => {
+const PerkButton = ({ onPress, children }) => {
 
   return (
     <TouchableOpacity onPress={onPress} style={styles.perk}>
       <Text style={styles.perkText}>
-        PERK
+        {children}
       </Text>
     </TouchableOpacity>
   );

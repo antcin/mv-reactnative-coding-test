@@ -18,6 +18,7 @@ class MainScreen extends Component {
     },
   }
   render() {
+    console.log(this.props.navigation)
     return (
       <AppTabNavigator />
     );
