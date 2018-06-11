@@ -11,13 +11,11 @@ class CardsList extends Component {
 
     this.state = {
       listings: [],
-      errorMessage: '',
-      isFetching: true,
     };
   }
 
   componentDidMount() {
-    this.setState({ listings: listResponse.data, isFetching: false });
+    this.setState({ listings: listResponse.data });
   }
 
   handlePerkPress = listing => {

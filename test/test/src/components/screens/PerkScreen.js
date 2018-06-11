@@ -19,13 +19,11 @@ class PerkScreen extends Component {
     super(props);
     this.state = {
       perk: '',
-      errorMessage: '',
-      isFetching: true,
     };
   }
 
   componentDidMount() {
-    this.setState({ perk: detailResponse.data, isFetching: false });
+    this.setState({ perk: detailResponse.data });
   }
 
   back(goBack) {
@@ -118,7 +116,6 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     marginTop: 100,
     borderTopWidth: 80,
-    // borderLeftWidth: 200,
     borderRightWidth: 500,
     borderBottomWidth: 80,
     borderStyle: 'solid',
