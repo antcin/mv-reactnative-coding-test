@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { ScrollView, StyleSheet, View, TouchableOpacity } from 'react-native';
 import CardSection from './CardSection';
 import CardDetails from './CardDetails';
 import PerkButton from './PerkButton';
@@ -11,41 +11,35 @@ class CardsList extends Component {
 
     this.state = {
       listings: [],
-      errorMessage: "",
-      isFetching: true
-     }
+      errorMessage: '',
+      isFetching: true,
+    };
   }
 
   componentDidMount() {
-    this.setState({ listings: listResponse.data, isFetching: false })
+    this.setState({ listings: listResponse.data, isFetching: false });
   }
 
-  handlePerkPress = (listing) => {
-    this.props.navigation.navigate('PerkScreen', {...listing})
-  }
+  handlePerkPress = listing => {
+    this.props.navigation.navigate('PerkScreen', { ...listing });
+  };
 
-  renderListings(){
+  renderListings() {
     return this.state.listings.map(listing => (
       <View style={styles.container} key={listing.title}>
         <CardDetails listing={listing} />
         <CardSection>
-          <PerkButton onPress={() => this.handlePerkPress(listing)}>
-            PERK
-          </PerkButton>
-          <TouchableOpacity></TouchableOpacity>
+          <PerkButton onPress={() => this.handlePerkPress(listing)}>PERK</PerkButton>
+          <TouchableOpacity />
         </CardSection>
       </View>
-    ))
-}
-
-  render(){
-    return (
-      <ScrollView style={styles.screen}>
-        {this.renderListings()}
-      </ScrollView>
-    );
+    ));
   }
-};
+
+  render() {
+    return <ScrollView style={styles.screen}>{this.renderListings()}</ScrollView>;
+  }
+}
 
 const styles = StyleSheet.create({
   screen: {
@@ -57,6 +51,6 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     backgroundColor: '#242424',
   },
-})
+});
 
 export default CardsList;

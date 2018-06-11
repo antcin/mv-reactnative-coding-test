@@ -1,45 +1,44 @@
-import React, { Component } from 'react'
-import { StyleSheet, View, Text, TouchableOpacity, Linking } from 'react-native'
-import normalize from 'react-native-elements/src/helpers/normalizeText'
-import FontAwesome from 'react-native-vector-icons/FontAwesome'
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import React, { Component } from 'react';
+import { StyleSheet, View, Text, TouchableOpacity, Linking } from 'react-native';
+import normalize from 'react-native-elements/src/helpers/normalizeText';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Communications from 'react-native-communications';
-import getDirections from 'react-native-google-maps-directions'
+import getDirections from 'react-native-google-maps-directions';
 
 class VenueInfo extends Component {
-
-  handleGetDirections = () => {
+  handleGetDirections() {
     const data = {
-       source: {
+      source: {
         latitude: null,
-        longitude: null
+        longitude: null,
       },
       destination: {
         latitude: parseFloat(this.props.latitude),
-        longitude: parseFloat(this.props.longitude)
+        longitude: parseFloat(this.props.longitude),
       },
       params: [
         {
-          key: "travelmode",
-          value: "driving"
+          key: 'travelmode',
+          value: 'driving',
         },
         {
-          key: "dir_action",
-          value: "navigate"
-        }
-      ]
-    }
-    getDirections(data)
+          key: 'dir_action',
+          value: 'navigate',
+        },
+      ],
+    };
+    getDirections(data);
   }
 
   render() {
-    const { venueInfoContainer, instructionText, icon } = styles
+    const { venueInfoContainer, instructionText, icon } = styles;
     return (
       <View style={venueInfoContainer}>
         <TouchableOpacity onPress={() => Linking.openURL(this.props.website)}>
           <View alignItems="center">
-              <MaterialIcons style={icon} name="desktop-mac" size={30} />
-              <Text style={instructionText}>Visit the website</Text>
+            <MaterialIcons style={icon} name="desktop-mac" size={30} />
+            <Text style={instructionText}>Visit the website</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => this.handleGetDirections()}>
@@ -55,7 +54,7 @@ class VenueInfo extends Component {
           </View>
         </TouchableOpacity>
       </View>
-    )
+    );
   }
 }
 
@@ -77,6 +76,6 @@ const styles = StyleSheet.create({
     padding: 20,
     borderTopWidth: 2,
     borderBottomWidth: 2,
-    borderColor: 'white'
+    borderColor: 'white',
   },
-})
+});

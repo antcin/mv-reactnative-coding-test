@@ -1,14 +1,9 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, Platform } from 'react-native';
-import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
-import CardsList from '../CardsList'
+import React from 'react';
+import CardsList from '../CardsList';
 
-class MainScreen extends Component {
-
+class MainScreen extends React.PureComponent {
   render() {
-    return (
-      <CardsList navigation={this.props.navigation}/>
-    );
+    return <CardsList navigation={this.props.navigation} />;
   }
 }
 

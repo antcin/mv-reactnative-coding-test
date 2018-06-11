@@ -1,43 +1,49 @@
 import React, { Component } from 'react';
-import { StyleSheet, Image, Text, TouchableOpacity, View, ScrollView, Platform } from 'react-native';
-import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
-import Ionicons from 'react-native-vector-icons/Ionicons'
-import normalize from 'react-native-elements/src/helpers/normalizeText'
-import detailResponse from '../../../example_data/details_response'
-import OpeningTimes from '../OpeningTimes'
-import VenueInfo from '../VenueInfo'
+import {
+  StyleSheet,
+  Image,
+  Text,
+  TouchableOpacity,
+  View,
+  ScrollView,
+  Platform,
+} from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import normalize from 'react-native-elements/src/helpers/normalizeText';
+import detailResponse from '../../../example_data/details_response';
+import OpeningTimes from '../OpeningTimes';
+import VenueInfo from '../VenueInfo';
 
 class PerkScreen extends Component {
-
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       perk: '',
-      errorMessage: "",
-      isFetching: true
-     }
+      errorMessage: '',
+      isFetching: true,
+    };
   }
 
   componentDidMount() {
-    this.setState({ perk: detailResponse.data, isFetching: false })
+    this.setState({ perk: detailResponse.data, isFetching: false });
   }
 
-  back(goBack){
-    return(
-      <TouchableOpacity onPress={() => goBack()} style={styles.back} >
-        <Ionicons name={'ios-arrow-back-outline'} size={30} color={'white'} />
+  back(goBack) {
+    return (
+      <TouchableOpacity onPress={() => goBack()} style={styles.back}>
+        <Ionicons name="ios-arrow-back-outline" size={30} color="white" />
       </TouchableOpacity>
-    )
+    );
   }
 
   render() {
-    listing = this.props.navigation.state.params
+    listing = this.props.navigation.state.params;
     const { goBack } = this.props.navigation;
 
     return (
       <ScrollView style={styles.screen}>
         <Image style={styles.image} source={{ uri: this.state.perk.image }} />
-          {this.back(goBack)}
+        {this.back(goBack)}
         <View>
           <Text style={styles.titlesText}>{listing.title}</Text>
         </View>
@@ -62,12 +68,11 @@ class PerkScreen extends Component {
           <Text style={styles.descriptionText}>{this.state.perk.description}</Text>
         </View>
       </ScrollView>
-    )
+    );
   }
 }
 
 export default PerkScreen;
-
 
 const styles = StyleSheet.create({
   screen: {
@@ -101,7 +106,7 @@ const styles = StyleSheet.create({
   },
   back: {
     position: 'absolute',
-    left:10,
-    paddingTop: Platform.OS === 'ios' ? 20 : 30
-  }
-})
+    left: 10,
+    paddingTop: Platform.OS === 'ios' ? 20 : 30,
+  },
+});

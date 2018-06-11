@@ -1,18 +1,13 @@
-import React, { Component } from 'react'
-import { StyleSheet, Text, FlatList, ScrollView, View, TouchableOpacity } from 'react-native'
+import React, { Component } from 'react';
+import { StyleSheet, Text, FlatList, ScrollView, View, TouchableOpacity } from 'react-native';
+
 class OpeningTimes extends Component {
-  constructor(props) {
-   super(props);
- }
-
-  keyExtractor = item => item.day
-
-
+  keyExtractor = item => item.day;
 
   renderItem = ({ item }) => {
-    const { open, close, index, is_open } = item
-    let { day } = item
-    day = day.substring(0, 3).toUpperCase()
+    const { open, close } = item;
+    let { day } = item;
+    day = day.substring(0, 3).toUpperCase();
 
     return (
       <TouchableOpacity onPress={() => this.expandCollapse} activeOpacity={0.8}>
@@ -20,13 +15,13 @@ class OpeningTimes extends Component {
           <View alignItems="center" justifyContent="center" style={styles.item}>
             <Text style={styles.dayText}>{day}</Text>
             <Text style={styles.hoursText}>
-                {open} - {close}
-              </Text>
+              {open} - {close}
+            </Text>
           </View>
         </ScrollView>
       </TouchableOpacity>
-    )
-  }
+    );
+  };
 
   render() {
     return (
@@ -39,7 +34,7 @@ class OpeningTimes extends Component {
           keyExtractor={this.keyExtractor}
         />
       </View>
-    )
+    );
   }
 }
 
@@ -60,6 +55,6 @@ const styles = StyleSheet.create({
   },
   hoursText: {
     color: '#FFFFFF',
-    fontWeight: 'bold'
-  }
-})
+    fontWeight: 'bold',
+  },
+});

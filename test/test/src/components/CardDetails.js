@@ -1,48 +1,46 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, Alert, StyleSheet } from 'react-native'
+import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import normalize from 'react-native-elements/src/helpers/normalizeText';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Card from './Card';
 import CardSection from './CardSection';
-import PerkButton from './PerkButton';
-import normalize from 'react-native-elements/src/helpers/normalizeText'
-import Ionicons from 'react-native-vector-icons/Ionicons'
-import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 const CardDetails = ({ listing }) => {
-  const { title, image, subtitle, type, offer, is_favourited, index } = listing
-  let walkingTime = "";
+  const { title, image, subtitle, offer, is_favourited } = listing;
+  let walkingTime = '';
   if (offer != null && offer.location != null) {
     walkingTime = offer.location.walking_time;
   }
 
-  favourite = (listing) => {
+  favourite = listing => {
     let heartIcon;
-    listing.is_favourited === 1 ? heartIcon = "heart" : heartIcon = "heart-o";
+    listing.is_favourited === 1 ? (heartIcon = 'heart') : (heartIcon = 'heart-o');
 
     return (
       <TouchableOpacity style={styles.favourite}>
         <View>
-          <FontAwesome name={heartIcon} size={25} color={'white'} />
+          <FontAwesome name={heartIcon} size={25} color="white" />
         </View>
       </TouchableOpacity>
-    )
-  }
+    );
+  };
 
   return (
-  <Card>
-    <CardSection>
-      <Image style={styles.img} source={{ uri: image }} />
-      {this.favourite(listing)}
-    </CardSection>
-    <CardSection>
-      <View style={styles.headerContent}>
-        <Text style={styles.titleText}>{title}</Text>
-        <Text style={styles.detailsText}>{subtitle}</Text>
-        <Text style={styles.detailsText}>{walkingTime}</Text>
-      </View>
-    </CardSection>
-  </Card>
-  )
-}
+    <Card>
+      <CardSection>
+        <Image style={styles.img} source={{ uri: image }} />
+        {this.favourite(listing)}
+      </CardSection>
+      <CardSection>
+        <View style={styles.headerContent}>
+          <Text style={styles.titleText}>{title}</Text>
+          <Text style={styles.detailsText}>{subtitle}</Text>
+          <Text style={styles.detailsText}>{walkingTime}</Text>
+        </View>
+      </CardSection>
+    </Card>
+  );
+};
 
 const styles = StyleSheet.create({
   headerContent: {
@@ -71,8 +69,8 @@ const styles = StyleSheet.create({
   favourite: {
     position: 'absolute',
     top: 10,
-    right: 20
-  }
-})
+    right: 20,
+  },
+});
 
 export default CardDetails;

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 class RedeemedTab extends Component {
-
   render() {
     return (
       <View style={styles.container}>
