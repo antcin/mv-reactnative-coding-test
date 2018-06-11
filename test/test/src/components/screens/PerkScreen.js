@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  Image,
+  ImageBackground,
   Text,
   TouchableOpacity,
   View,
@@ -42,8 +42,10 @@ class PerkScreen extends Component {
 
     return (
       <ScrollView style={styles.screen}>
-        <Image style={styles.image} source={{ uri: this.state.perk.image }} />
-        {this.back(goBack)}
+        <ImageBackground style={styles.image} source={{ uri: this.state.perk.image }}>
+          {this.back(goBack)}
+          <View style={styles.shape} />
+        </ImageBackground>
         <View>
           <Text style={styles.titlesText}>{listing.title}</Text>
         </View>
@@ -98,7 +100,7 @@ const styles = StyleSheet.create({
     width: null,
   },
   titlesText: {
-    fontSize: normalize(14),
+    fontSize: normalize(16),
     marginLeft: 30,
     marginVertical: 20,
     fontWeight: 'bold',
@@ -108,5 +110,22 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 10,
     paddingTop: Platform.OS === 'ios' ? 20 : 30,
+  },
+  shape: {
+    width: 0,
+    height: 0,
+    justifyContent: 'center',
+    alignItems: 'stretch',
+    marginTop: 100,
+    borderTopWidth: 80,
+    // borderLeftWidth: 200,
+    borderRightWidth: 500,
+    borderBottomWidth: 80,
+    borderStyle: 'solid',
+    borderTopColor: 'transparent',
+    borderLeftColor: '#242424',
+    borderRightColor: 'transparent',
+    borderBottomColor: '#242424',
+    paddingBottom: 40,
   },
 });
