@@ -1,7 +1,6 @@
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 # Model Village Tech Test
-
 A small mobile app that shows a list of events/perks.
 
 ## Features
@@ -44,7 +43,6 @@ npm start
 Follow the instructions prompted on the CLI to run the app either via simulator or Expo.
 
 ### Diagram
-
 ![App Diagram](diagram.png "App Diagram")
 
 ### User stories [MVP]
@@ -64,16 +62,14 @@ I would like to be able to click on the event\'s tile.
 ```
 
 ## Approach
-
 To begin with, I started setting up the App's backbone navigation. After that, I created the components that would appear in the main page screen. I kept a focus on making re-usable components (especially the functional ones). I then faked the API call. I fetched the list of events in `CardsList` and updated the component state in the `ComponentDidMount` lifecycle method. At this point, I had to spend some time researching how to pass the navigation props from parent to child components. At the same time, I turned my attention to creating the second screen\'s components. After having found the solution to the navigation, I then focused on improving the styling of the app.
 
 | Example of component  | Description |
 | ------------- | ------------- |
 | CardsList     | fetches data from `list_response.json` using the `setState` method.   |
-| CardDetails   | produces one listing\'s details component. The listing is passed to the `CardDetails` component as a prop. |
+| CardDetails   | produces one listing details component. The listing is passed to the `CardDetails` component as a prop. |
 
 ### Challenges
-
 - Navigation
  - I was unable to prevent the tab bar from showing on `PerkScreen`. The option `tabBarVisible: false` did not seem to work. I suspect there can be some issues within the setup of the StackNavigation.
 - Animation

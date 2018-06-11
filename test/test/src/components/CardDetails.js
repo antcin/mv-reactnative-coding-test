@@ -12,7 +12,7 @@ const CardDetails = ({ listing }) => {
     walkingTime = offer.location.walking_time;
   }
 
-  favourite = listing => {
+  favourite = () => {
     let heartIcon;
     listing.is_favourited === 1 ? (heartIcon = 'heart') : (heartIcon = 'heart-o');
 
