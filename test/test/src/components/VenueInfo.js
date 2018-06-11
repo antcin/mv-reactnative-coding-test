@@ -32,8 +32,6 @@ class VenueInfo extends Component {
     getDirections(data)
   }
 
-
-
   render() {
     const { venueInfoContainer, instructionText, icon } = styles
     return (

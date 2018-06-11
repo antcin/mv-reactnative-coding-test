@@ -19,7 +19,7 @@ class OpeningTimes extends Component {
         <ScrollView>
           <View alignItems="center" justifyContent="center" style={styles.item}>
             <Text style={styles.dayText}>{day}</Text>
-            <Text style={styles.cardText}>
+            <Text style={styles.dayText}>
                 {open} - {close}
               </Text>
           </View>
@@ -47,8 +47,8 @@ export default OpeningTimes;
 
 const styles = StyleSheet.create({
   item: {
-    backgroundColor: '#423f42',
-    borderLeftColor: '#343538',
+    backgroundColor: '#343434',
+    borderLeftColor: '#414141',
     borderLeftWidth: 1,
     borderTopColor: '#5F4B8B',
     borderTopWidth: 4,

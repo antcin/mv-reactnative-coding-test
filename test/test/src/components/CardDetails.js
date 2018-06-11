@@ -35,14 +35,14 @@ const styles = StyleSheet.create({
   },
   titleText: {
     paddingTop: 20,
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
-    color: 'white',
+    color: '#F8F8F8',
   },
   detailsText: {
     paddingTop: 10,
     fontSize: normalize(12),
-    color: 'white',
+    color: '#9E9E9E',
   },
   img: {
     height: 300,

@@ -35,7 +35,7 @@ class PerkScreen extends Component {
           <Text style={styles.titlesText}>{listing.title}</Text>
         </View>
         <View>
-          <Text style={styles.detailsText}>{listing.subtitle}</Text>
+          <Text style={styles.subtitleText}>{listing.subtitle}</Text>
         </View>
         <VenueInfo
           website={this.state.perk.website}
@@ -52,7 +52,7 @@ class PerkScreen extends Component {
         />
         <View>
           <Text style={styles.titlesText}>PERK DETAILS</Text>
-          <Text style={styles.detailsText}>{this.state.perk.description}</Text>
+          <Text style={styles.descriptionText}>{this.state.perk.description}</Text>
         </View>
       </ScrollView>
     )
@@ -64,15 +64,20 @@ export default PerkScreen;
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: '#454545',
+    backgroundColor: '#242424',
   },
   headerContent: {
     flexDirection: 'column',
     justifyContent: 'space-around',
   },
-  detailsText: {
+  subtitleText: {
     fontSize: normalize(12),
-    color: '#FFFFFF',
+    color: '#9E9E9E',
+    marginLeft: 30,
+  },
+  descriptionText: {
+    fontSize: normalize(12),
+    color: '#E4E4E4',
     marginLeft: 30,
   },
   image: {
@@ -85,6 +90,6 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     marginVertical: 20,
     fontWeight: 'bold',
-    color: '#FFFFFF',
+    color: '#F2F2F2',
   },
 })

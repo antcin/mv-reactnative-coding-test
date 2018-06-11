@@ -7,20 +7,19 @@ import FavouritesTab from '../components/tabs/FavouritesTab';
 import RedeemedTab from '../components/tabs/RedeemedTab';
 import ProfileTab from '../components/tabs/ProfileTab';
 // import CardsList from '../components/CardsList';
-import { Content, Icon } from 'native-base';
+// import { Content, Icon } from 'native-base';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 export const AppStackNavigator = createStackNavigator({
   MainScreen: {
     screen: MainScreen,
     navigationOptions: ({ navigation }) => ({
-      headerRight: <Icon name="menu" style={{ paddingRight: 10, color: '#ffffff'}} />,
+      headerRight: <FontAwesome name="bars" size={24} style={{ paddingRight: 10, color: '#ffffff'}} />,
       title: 'HOME',
       headerTintColor: '#FFFFFF',
       headerStyle: {
-        backgroundColor: '#010101'
+        backgroundColor: '#010101',
       },
-
     })
   },
   PerkScreen:{
@@ -30,6 +29,7 @@ export const AppStackNavigator = createStackNavigator({
     navigationOptions: ({ navigation }) => ({
       title: 'PERK DETAIL',
       headerBackTitle: null,
+      header: null
     })
   }
 })
@@ -39,7 +39,7 @@ export const AppTabNavigator = createBottomTabNavigator({
     screen: AppStackNavigator,
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({tintColor}) => (
-        <Icon name="home" style={{color: tintColor}}/>
+        <FontAwesome name="home" size={28} style={{color: tintColor}}/>
       ),
     })
   },
@@ -47,7 +47,7 @@ export const AppTabNavigator = createBottomTabNavigator({
     screen: PostsTab,
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({tintColor}) => (
-        <Icon name="camera" style={{color: tintColor}}/>
+        <FontAwesome name="camera" size={24} style={{color: tintColor}}/>
       ),
     })
   },
@@ -55,7 +55,7 @@ export const AppTabNavigator = createBottomTabNavigator({
     screen: FavouritesTab,
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({tintColor}) => (
-        <Icon name="heart" style={{color: tintColor}}/>
+        <FontAwesome name="heart" size={24} style={{color: tintColor}}/>
       )
     })
   },
@@ -63,7 +63,7 @@ export const AppTabNavigator = createBottomTabNavigator({
     screen: RedeemedTab,
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({tintColor}) => (
-        <Icon  style={{color: tintColor}}/>
+        <FontAwesome name="gift" size={24} style={{color: tintColor}}/>
       )
     })
   },
@@ -71,19 +71,18 @@ export const AppTabNavigator = createBottomTabNavigator({
     screen: ProfileTab,
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({tintColor}) => (
-        <Icon name="person" style={{color: tintColor}}/>
+        <FontAwesome name="user" size={24} style={{color: tintColor}}/>
       )
     })
   },
 },{
   animationEnabled: true,
-  swipeEnabled: true,
   tabBarPosition: "bottom",
   tabBarOptions: {
     activeTintColor: '#ccc',
-    inactiveTintColor: '#FFFFFF',
+    inactiveTintColor: '#ffffff',
     style: {
-      backgroundColor: '#010101'
+      backgroundColor: '#010101',
     }
   }
 }
