@@ -42,7 +42,7 @@ npm start
 ```
 Follow the instructions prompted on the CLI to run the app either via simulator or Expo.
 
-### Diagram
+### Diagram
 ![App Diagram](diagram.png "App Diagram")
 
 ### User stories [MVP]
@@ -58,11 +58,11 @@ I would like to see a list of tiles on the Main Screen.
 ```sh
 As a user,
 So that I can see the details of a specific event,
-I would like to be able to click on the event\'s tile.
+I would like to be able to click on the tile of the event.
 ```
 
 ## Approach
-To begin with, I started setting up the App's backbone navigation. After that, I created the components that would appear in the main page screen. I kept a focus on making re-usable components (especially the functional ones). I then faked the API call. I fetched the list of events in `CardsList` and updated the component state in the `ComponentDidMount` lifecycle method. At this point, I had to spend some time researching how to pass the navigation props from parent to child components. At the same time, I turned my attention to creating the second screen\'s components. After having found the solution to the navigation, I then focused on improving the styling of the app.
+To begin with, I started setting up the App's backbone navigation. After that, I created the components that would appear in the main page screen. I kept a focus on making re-usable components (especially the functional ones). I then faked the API call. I fetched the list of events in `CardsList` and updated the component state in the `ComponentDidMount` lifecycle method. At this point, I had to spend some time researching how to pass the navigation props from parent to child components. At the same time, I turned my attention to creating the components of the second screen. After having found the solution to the navigation, I then focused on improving the styling of the app.
 
 | Example of component  | Description |
 | ------------- | ------------- |
