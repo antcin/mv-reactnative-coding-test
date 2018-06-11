@@ -5,7 +5,6 @@ import CardsList from '../CardsList'
 
 class MainScreen extends Component {
 
-
   render() {
     return (
       <CardsList navigation={this.props.navigation}/>

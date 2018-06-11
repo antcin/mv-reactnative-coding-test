@@ -14,20 +14,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-
-// const AppStackNavigator = createStackNavigator({
-//   MainScreen:{
-//     screen: MainScreen,
-//     navigationOptions: ({ navigation }) => ({
-//       title: 'HOME'
-//     })
-//   },
-//   PerkScreen:{
-//     screen: PerkScreen,
-//     headerMode: 'none',
-//     navigationOptions: ({ navigation }) => ({
-//       title: "PERK"
-//     })
-//   }
-// })

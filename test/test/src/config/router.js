@@ -24,15 +24,16 @@ export const AppStackNavigator = createStackNavigator({
   },
   PerkScreen:{
     screen: PerkScreen,
-    mode: 'screen',
-    headerMode: 'none',
     navigationOptions: ({ navigation }) => ({
       title: 'PERK DETAIL',
       headerBackTitle: null,
       header: null,
       tabBarVisible: false
     })
-  }
+  },
+},
+{
+  headerMode: 'screen'
 })
 
 export const AppTabNavigator = createBottomTabNavigator({
