@@ -29,7 +29,8 @@ export const AppStackNavigator = createStackNavigator({
     navigationOptions: ({ navigation }) => ({
       title: 'PERK DETAIL',
       headerBackTitle: null,
-      header: null
+      header: null,
+      tabBarVisible: false
     })
   }
 })

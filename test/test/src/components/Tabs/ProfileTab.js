@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Icon } from 'native-base';
 
 class ProfileTab extends Component {
 

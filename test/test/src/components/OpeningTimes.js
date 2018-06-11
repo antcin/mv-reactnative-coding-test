@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, FlatList, ScrollView, View, TouchableOpacity } from 'react-native'
-
-// import normalize from 'react-native-elements/src/helpers/normalizeText'
 class OpeningTimes extends Component {
   constructor(props) {
    super(props);
