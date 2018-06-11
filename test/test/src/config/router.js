@@ -6,7 +6,7 @@ import PostsTab from '../components/tabs/PostsTab';
 import FavouritesTab from '../components/tabs/FavouritesTab';
 import RedeemedTab from '../components/tabs/RedeemedTab';
 import ProfileTab from '../components/tabs/ProfileTab';
-import CardsList from '../components/CardsList';
+// import CardsList from '../components/CardsList';
 import { Content, Icon } from 'native-base';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
@@ -29,7 +29,7 @@ export const AppStackNavigator = createStackNavigator({
     headerMode: 'none',
     navigationOptions: ({ navigation }) => ({
       title: 'PERK DETAIL',
-      headerBackTitle: null
+      headerBackTitle: null,
     })
   }
 })
@@ -40,7 +40,7 @@ export const AppTabNavigator = createBottomTabNavigator({
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({tintColor}) => (
         <Icon name="home" style={{color: tintColor}}/>
-      )
+      ),
     })
   },
   POSTS: {
@@ -48,7 +48,7 @@ export const AppTabNavigator = createBottomTabNavigator({
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({tintColor}) => (
         <Icon name="camera" style={{color: tintColor}}/>
-      )
+      ),
     })
   },
   FAVOURITES: {
@@ -80,8 +80,11 @@ export const AppTabNavigator = createBottomTabNavigator({
   swipeEnabled: true,
   tabBarPosition: "bottom",
   tabBarOptions: {
-    activeTintColor: '#000',
-    inactiveTintColor: '#d1cece',
+    activeTintColor: '#ccc',
+    inactiveTintColor: '#FFFFFF',
+    style: {
+      backgroundColor: '#010101'
+    }
   }
 }
 )

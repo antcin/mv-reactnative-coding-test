@@ -9,6 +9,10 @@ import VenueInfo from '../VenueInfo'
 
 class PerkScreen extends Component {
 
+  static navigationOptions = {
+    tabBarVisible: false
+  }
+
   constructor(props) {
     super(props)
     this.state = {
@@ -58,7 +62,7 @@ class PerkScreen extends Component {
 export default PerkScreen;
 
 
-const styles = {
+const styles = StyleSheet.create({
   screen: {
     backgroundColor: '#454545',
   },
@@ -83,4 +87,4 @@ const styles = {
     fontWeight: 'bold',
     color: '#FFFFFF',
   },
-}
+})

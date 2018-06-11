@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Text, TouchableOpacity } from 'react-native';
+import { ScrollView, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import CardSection from './CardSection';
 import CardDetails from './CardDetails';
 import PerkButton from './PerkButton';
@@ -47,7 +47,7 @@ class CardsList extends Component {
   }
 };
 
-const styles = {
+const styles = StyleSheet.create({
   screen: {
     backgroundColor: '#454545',
   },
@@ -57,6 +57,6 @@ const styles = {
     overflow: 'hidden',
     backgroundColor: '#343538',
   },
-}
+})
 
 export default CardsList;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, Linking } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity, Linking } from 'react-native'
 import normalize from 'react-native-elements/src/helpers/normalizeText'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
@@ -63,7 +63,7 @@ class VenueInfo extends Component {
 
 export default VenueInfo;
 
-const styles = {
+const styles = StyleSheet.create({
   instructionText: {
     fontSize: normalize(10),
     marginTop: 10,
@@ -81,4 +81,4 @@ const styles = {
     borderBottomWidth: 2,
     borderColor: 'white'
   },
-}
+})

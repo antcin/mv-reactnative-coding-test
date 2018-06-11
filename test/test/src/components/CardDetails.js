@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, Alert } from 'react-native'
+import { View, Text, Image, TouchableOpacity, Alert, StyleSheet } from 'react-native'
 import Card from './Card';
 import CardSection from './CardSection';
 import PerkButton from './PerkButton';
@@ -28,7 +28,7 @@ const CardDetails = ({ listing }) => {
   )
 }
 
-const styles = {
+const styles = StyleSheet.create({
   headerContent: {
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -52,6 +52,6 @@ const styles = {
     marginLeft: -10,
     marginRight: -10,
   }
-}
+})
 
 export default CardDetails;

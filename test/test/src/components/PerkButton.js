@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import normalize from 'react-native-elements/src/helpers/normalizeText'
 
 
@@ -14,7 +14,7 @@ const PerkButton = ({ onPress, children }) => {
   );
 };
 
-const styles = {
+const styles = StyleSheet.create({
   perk: {
     position:'absolute',
     right:10,
@@ -29,5 +29,5 @@ const styles = {
     color: '#FFFFFF',
     fontWeight: 'bold',
   },
-}
+})
 export default PerkButton;

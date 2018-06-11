@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Text, FlatList, ScrollView, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, FlatList, ScrollView, View, TouchableOpacity } from 'react-native'
 
 // import normalize from 'react-native-elements/src/helpers/normalizeText'
 class OpeningTimes extends Component {
@@ -45,7 +45,7 @@ class OpeningTimes extends Component {
 
 export default OpeningTimes;
 
-const styles = {
+const styles = StyleSheet.create({
   item: {
     backgroundColor: '#423f42',
     borderLeftColor: '#343538',
@@ -58,4 +58,4 @@ const styles = {
   dayText: {
     color: '#ccc',
   },
-}
+})
