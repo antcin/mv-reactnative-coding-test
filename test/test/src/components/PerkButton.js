@@ -6,7 +6,7 @@ import normalize from 'react-native-elements/src/helpers/normalizeText'
 const PerkButton = ({ onPress, children }) => {
 
   return (
-    <TouchableOpacity onPress={onPress} style={styles.perk}>
+    <TouchableOpacity onPress={onPress} style={styles.perk} activeOpacity={0.8}>
       <Text style={styles.perkText}>
         {children}
       </Text>

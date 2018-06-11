@@ -4,18 +4,34 @@ import Card from './Card';
 import CardSection from './CardSection';
 import PerkButton from './PerkButton';
 import normalize from 'react-native-elements/src/helpers/normalizeText'
+import Ionicons from 'react-native-vector-icons/Ionicons'
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 const CardDetails = ({ listing }) => {
-  const { title, image, subtitle, type, offer } = listing
+  const { title, image, subtitle, type, offer, is_favourited, index } = listing
   let walkingTime = "";
   if (offer != null && offer.location != null) {
     walkingTime = offer.location.walking_time;
+  }
+
+  favourite = (listing) => {
+    let heartIcon;
+    listing.is_favourited === 1 ? heartIcon = "heart" : heartIcon = "heart-o";
+
+    return (
+      <TouchableOpacity style={styles.favourite}>
+        <View>
+          <FontAwesome name={heartIcon} size={25} color={'white'} />
+        </View>
+      </TouchableOpacity>
+    )
   }
 
   return (
   <Card>
     <CardSection>
       <Image style={styles.img} source={{ uri: image }} />
+      {this.favourite(listing)}
     </CardSection>
     <CardSection>
       <View style={styles.headerContent}>
@@ -51,6 +67,11 @@ const styles = StyleSheet.create({
     marginTop: -10,
     marginLeft: -10,
     marginRight: -10,
+  },
+  favourite: {
+    position: 'absolute',
+    top: 10,
+    right: 20
   }
 })
 

@@ -13,7 +13,7 @@ class OpeningTimes extends Component {
     day = day.substring(0, 3).toUpperCase()
 
     return (
-      <TouchableOpacity onPress={() => this.expandCollapse}>
+      <TouchableOpacity onPress={() => this.expandCollapse} activeOpacity={0.8}>
         <ScrollView>
           <View alignItems="center" justifyContent="center" style={styles.item}>
             <Text style={styles.dayText}>{day}</Text>
