@@ -7,6 +7,8 @@ class OpeningTimes extends Component {
 
   keyExtractor = item => item.day
 
+
+
   renderItem = ({ item }) => {
     const { open, close, index, is_open } = item
     let { day } = item
@@ -17,7 +19,7 @@ class OpeningTimes extends Component {
         <ScrollView>
           <View alignItems="center" justifyContent="center" style={styles.item}>
             <Text style={styles.dayText}>{day}</Text>
-            <Text style={styles.dayText}>
+            <Text style={styles.hoursText}>
                 {open} - {close}
               </Text>
           </View>
@@ -56,4 +58,8 @@ const styles = StyleSheet.create({
   dayText: {
     color: '#ccc',
   },
+  hoursText: {
+    color: '#FFFFFF',
+    fontWeight: 'bold'
+  }
 })
