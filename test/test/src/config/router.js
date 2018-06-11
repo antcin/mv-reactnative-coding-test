@@ -12,7 +12,7 @@ export const AppStackNavigator = createStackNavigator(
   {
     MainScreen: {
       screen: MainScreen,
-      navigationOptions: ({ navigation }) => ({
+      navigationOptions: {
         headerRight: (
           <FontAwesome name="bars" size={24} style={{ paddingRight: 10, color: '#ffffff' }} />
         ),
@@ -21,16 +21,16 @@ export const AppStackNavigator = createStackNavigator(
         headerStyle: {
           backgroundColor: '#010101',
         },
-      }),
+      },
     },
     PerkScreen: {
       screen: PerkScreen,
-      navigationOptions: ({ navigation }) => ({
+      navigationOptions: {
         title: 'PERK DETAIL',
         headerBackTitle: null,
         header: null,
         tabBarVisible: false,
-      }),
+      },
     },
   },
   {
@@ -38,47 +38,58 @@ export const AppStackNavigator = createStackNavigator(
   },
 );
 
+AppStackNavigator.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+    tabBarVisible = false;
+  }
+
+  return {
+    tabBarVisible,
+  };
+};
+
 export const AppTabNavigator = createBottomTabNavigator(
   {
     BROWSE: {
       screen: AppStackNavigator,
-      navigationOptions: ({ navigation }) => ({
+      navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <FontAwesome name="home" size={28} style={{ color: tintColor }} />
         ),
-      }),
+      },
     },
     POSTS: {
       screen: PostsTab,
-      navigationOptions: ({ navigation }) => ({
+      navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <FontAwesome name="camera" size={24} style={{ color: tintColor }} />
         ),
-      }),
+      },
     },
     FAVOURITES: {
       screen: FavouritesTab,
-      navigationOptions: ({ navigation }) => ({
+      navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <FontAwesome name="heart" size={24} style={{ color: tintColor }} />
         ),
-      }),
+      },
     },
     REDEMEED: {
       screen: RedeemedTab,
-      navigationOptions: ({ navigation }) => ({
+      navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <FontAwesome name="gift" size={24} style={{ color: tintColor }} />
         ),
-      }),
+      },
     },
     PROFILE: {
       screen: ProfileTab,
-      navigationOptions: ({ navigation }) => ({
+      navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <FontAwesome name="user" size={24} style={{ color: tintColor }} />
         ),
-      }),
+      },
     },
   },
   {

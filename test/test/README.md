@@ -70,8 +70,6 @@ To begin with, I started setting up the App's backbone navigation. After that, I
 | CardDetails   | produces one listing details component. The listing is passed to the `CardDetails` component as a prop. |
 
 ### Challenges
-- Navigation
- - I was unable to prevent the tab bar from showing on `PerkScreen`. The option `tabBarVisible: false` did not seem to work. I suspect there can be some issues within the setup of the StackNavigation.
 - Animation
   - I was really keen on animating the opening times, however I did not manage to do it, despite the amount of research carried out.
 
